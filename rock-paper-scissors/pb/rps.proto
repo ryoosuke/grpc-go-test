@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "rock-paper-scissors/pb";
+
+package rps;
+
+service RPS {
+  rpc DoGame(DoGameRequest) returns (Results) {}
+}
+
+message DoGameRequest {
+  string name = 1;
+  int64 playerHand = 2;
+}
+
+message Results {
+  string result = 1;
+}
